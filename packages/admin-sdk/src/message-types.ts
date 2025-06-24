@@ -6,7 +6,7 @@ import type {
   contextEnvironment,
   contextLocale,
   contextCurrency,
-  contextShopwareVersion,
+  contextOinPanelVersion,
   contextAppInformation,
   contextModuleInformation,
   contextUserInformation,
@@ -41,13 +41,12 @@ import type {
   repositoryDelete,
   repositoryCreate,
 } from './data/repository';
-import type { iapCheckout } from './iap';
 
 /**
  * Contains all shopware send types.
  * @internal
  */
-export interface ShopwareMessageTypes {
+export interface OinPanelMessageTypes {
   notificationDispatch: notificationDispatch,
   toastDispatch: toastDispatch,
   windowRedirect: windowRedirect,
@@ -58,7 +57,7 @@ export interface ShopwareMessageTypes {
   contextEnvironment: contextEnvironment,
   contextLocale: contextLocale,
   contextCurrency: contextCurrency,
-  contextShopwareVersion: contextShopwareVersion,
+  contextOinPanelVersion: contextOinPanelVersion,
   contextUserInformation: contextUserInformation,
   contextUserTimezone: contextUserTimezone,
   contextAppInformation: contextAppInformation,
@@ -103,7 +102,6 @@ export interface ShopwareMessageTypes {
   datasetSubscribeRegistration: datasetSubscribeRegistration,
   datasetUpdate: datasetUpdate,
   datasetGet: datasetGet,
-  iapCheckout: iapCheckout,
   __function__: __function__,
   __registerWindow__: __registerWindow__,
   _multiply: _multiply,

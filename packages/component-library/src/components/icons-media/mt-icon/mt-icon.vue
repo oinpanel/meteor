@@ -91,7 +91,7 @@ watch(
   iconInformation,
   () => {
     import(
-      `./../../../../node_modules/@shopware-ag/meteor-icon-kit/icons/${iconInformation.value.mode}/${iconInformation.value.name}.svg`
+      `./../../../../node_modules/@oinpanel/meteor-icon-kit/icons/${iconInformation.value.mode}/${iconInformation.value.name}.svg`
     )
       .then((data) => {
         if (data.default) {
@@ -108,7 +108,7 @@ watch(
 </script>
 
 <style lang="scss">
-@import "node_modules/@shopware-ag/meteor-icon-kit/icons/meteor-icon-kit.scss";
+@import "node_modules/@oinpanel/meteor-icon-kit/icons/meteor-icon-kit.scss";
 
 .mt-icon {
   display: inline-block;

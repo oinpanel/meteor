@@ -1,5 +1,5 @@
 import { createSender, createSubscriber } from '../channel';
-import getCompareIsShopwareVersion from './compare-version';
+import getCompareIsOinPanelVersion from './compare-version';
 import createACLHelper from './acl';
 import type { privileges } from '../_internals/privileges';
 
@@ -9,8 +9,8 @@ export const getEnvironment = createSender('contextEnvironment', {});
 export const getLocale = createSender('contextLocale', {});
 export const subscribeLocale = createSubscriber('contextLocale');
 export const getCurrency = createSender('contextCurrency', {});
-export const getShopwareVersion = createSender('contextShopwareVersion', {});
-export const compareIsShopwareVersion = getCompareIsShopwareVersion(getShopwareVersion);
+export const getOinPanelVersion = createSender('contextOinPanelVersion', {});
+export const compareIsOinPanelVersion = getCompareIsOinPanelVersion(getOinPanelVersion);
 export const getUserInformation = createSender('contextUserInformation', {});
 export const getUserTimezone = createSender('contextUserTimezone', {});
 export const getAppInformation = createSender('contextAppInformation', {});
@@ -56,9 +56,9 @@ export type contextCurrency = {
 }
 
 /**
- * Get the current Shopware version
+ * Get the current OinPanel version
  */
-export type contextShopwareVersion = {
+export type contextOinPanelVersion = {
   responseType: string,
 }
 
@@ -89,9 +89,9 @@ export type contextUserInformation = {
     admin: boolean,
     avatarId: string,
     email: string,
-    firstName: string,
+    name: string,
     id: string,
-    lastName: string,
+    phoneNumber: string,
     localeId: string,
     title: string,
     type: string,

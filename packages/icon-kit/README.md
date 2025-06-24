@@ -38,13 +38,13 @@ $ yarn -v
 To install the meteor-icon-kit, run:
 
 ```sh
-$ npm install @shopware-ag/meteor-icon-kit
+$ npm install @oinpanel/meteor-icon-kit
 ```
 
 Or if you prefer using Yarn:
 
 ```sh
-$ yarn add @shopware-ag/meteor-icon-kit
+$ yarn add @oinpanel/meteor-icon-kit
 ```
 
 ## Usage
@@ -53,7 +53,7 @@ Start by importing/using the provided styling.
 Either utilizing sass/scss:
 
 ```scss
-@import "@shopware-ag/meteor-icon-kit/icons/meteor-icon-kit.scss";
+@import "@oinpanel/meteor-icon-kit/icons/meteor-icon-kit.scss";
 ```
 
 Or classic via the css file:
@@ -68,7 +68,7 @@ Or classic via the css file:
 Then, you can use the icons:
 
 ```js
-import wallet from "@shopware-ag/meteor-icon-kit/icons/regular/wallet.svg";
+import wallet from "@oinpanel/meteor-icon-kit/icons/regular/wallet.svg";
 ```
 
 ### Dynamic colors
@@ -126,7 +126,7 @@ This way you can import your svg files as components:
 </template>
 
 <script setup>
-import ActivityIcon from "@shopware-ag/meteor-icon-kit/icons/regular/activity.svg";
+import ActivityIcon from "@oinpanel/meteor-icon-kit/icons/regular/activity.svg";
 </script>
 ```
 

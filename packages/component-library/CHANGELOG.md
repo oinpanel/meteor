@@ -76,7 +76,7 @@
 - Updated dependencies [0f5575d]
 - Updated dependencies [a1c2414]
   - @oinpanel/meteor-tokens@1.1.0
-  - @shopware-ag/meteor-icon-kit@5.5.0
+  - @oinpanel/meteor-icon-kit@5.5.0
 
 ## 4.10.0
 
