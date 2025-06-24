@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import type { ShopwareMessageTypes } from './message-types';
+import type { OinPanelMessageTypes } from './message-types';
 import { generateUniqueId } from './_internals/utils';
 import type { extension, privilegeString } from './_internals/privileges';
 import MissingPrivilegesError from './_internals/privileges/missing-privileges-error';
@@ -51,13 +51,13 @@ export type BaseMessageOptions = { privileges?: privilegeString[] }
  * This type contains the data of the type without the responseType
  * @internal
  */
-export type MessageDataType<TYPE extends keyof ShopwareMessageTypes> = Omit<ShopwareMessageTypes[TYPE], 'responseType'>;
+export type MessageDataType<TYPE extends keyof OinPanelMessageTypes> = Omit<OinPanelMessageTypes[TYPE], 'responseType'>;
 
 /**
  * This is the structure of the data which will be send with {@link send}
  * @internal
  */
-export type ShopwareMessageSendData<MESSAGE_TYPE extends keyof ShopwareMessageTypes> = {
+export type ShopwareMessageSendData<MESSAGE_TYPE extends keyof OinPanelMessageTypes> = {
   _type: MESSAGE_TYPE,
   _data: MessageDataType<MESSAGE_TYPE> & BaseMessageOptions,
   _callbackId: string,
@@ -67,9 +67,9 @@ export type ShopwareMessageSendData<MESSAGE_TYPE extends keyof ShopwareMessageTy
  * This is the structure of the data which will be send back when the admin gives a response
  * @internal
  */
-export type ShopwareMessageResponseData<MESSAGE_TYPE extends keyof ShopwareMessageTypes> = {
+export type ShopwareMessageResponseData<MESSAGE_TYPE extends keyof OinPanelMessageTypes> = {
   _type: MESSAGE_TYPE,
-  _response: ShopwareMessageTypes[MESSAGE_TYPE]['responseType'] | null,
+  _response: OinPanelMessageTypes[MESSAGE_TYPE]['responseType'] | null,
   _callbackId: string,
 }
 
@@ -104,12 +104,12 @@ const subscriberRegistry: Set<{
  * @param data The matching data for the type
  * @returns A promise with the response data in the given responseType
  */
-export function send<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(
+export function send<MESSAGE_TYPE extends keyof OinPanelMessageTypes>(
   type: MESSAGE_TYPE,
   data: MessageDataType<MESSAGE_TYPE> & BaseMessageOptions,
   _targetWindow?: Window,
   _origin?: string
-): Promise<ShopwareMessageTypes[MESSAGE_TYPE]['responseType'] | null> {
+): Promise<OinPanelMessageTypes[MESSAGE_TYPE]['responseType'] | null> {
   // Generate a unique callback ID used to match the response for this request
   const callbackId = generateUniqueId();
 
@@ -260,17 +260,17 @@ export function send<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(
   });
 }
 
-export type HandleMethod<MESSAGE_TYPE extends keyof ShopwareMessageTypes> = (
+export type HandleMethod<MESSAGE_TYPE extends keyof OinPanelMessageTypes> = (
   data: MessageDataType<MESSAGE_TYPE> & BaseMessageOptions,
   additionalInformation: { _event_: MessageEvent<string> }
-) => Promise<ShopwareMessageTypes[MESSAGE_TYPE]['responseType']> | ShopwareMessageTypes[MESSAGE_TYPE]['responseType'];
+) => Promise<OinPanelMessageTypes[MESSAGE_TYPE]['responseType']> | OinPanelMessageTypes[MESSAGE_TYPE]['responseType'];
 
 /**
  * @param type Choose a type of action from the {@link send-types}
  * @param method This method should return the response value
  * @returns The return value is a cancel function to stop listening to the events
  */
-export function handle<MESSAGE_TYPE extends keyof ShopwareMessageTypes>
+export function handle<MESSAGE_TYPE extends keyof OinPanelMessageTypes>
 (
   type: MESSAGE_TYPE,
   method: HandleMethod<MESSAGE_TYPE>
@@ -405,9 +405,9 @@ export function handle<MESSAGE_TYPE extends keyof ShopwareMessageTypes>
   return ():void => window.removeEventListener('message', handleListener);
 }
 
-export function publish<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(
+export function publish<MESSAGE_TYPE extends keyof OinPanelMessageTypes>(
   type: MESSAGE_TYPE,
-  data: ShopwareMessageTypes[MESSAGE_TYPE]['responseType'],
+  data: OinPanelMessageTypes[MESSAGE_TYPE]['responseType'],
   sources: {
     source: Window,
     origin: string,
@@ -427,9 +427,9 @@ export function publish<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(
   });
 }
 
-export function subscribe<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(
+export function subscribe<MESSAGE_TYPE extends keyof OinPanelMessageTypes>(
   type: MESSAGE_TYPE,
-  method: (data: ShopwareMessageTypes[MESSAGE_TYPE]['responseType']) => void | Promise<unknown>
+  method: (data: OinPanelMessageTypes[MESSAGE_TYPE]['responseType']) => void | Promise<unknown>
 ): () => void {
   return handle(type, method);
 }
@@ -441,22 +441,22 @@ export function subscribe<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(
  */
 
 // SENDER WITH OPTIONAL ARGUMENTS (WHEN ALL BASE ARGUMENTS ARE DEFINED)
-export function createSender<MESSAGE_TYPE extends keyof ShopwareMessageTypes>
+export function createSender<MESSAGE_TYPE extends keyof OinPanelMessageTypes>
 (messageType: MESSAGE_TYPE, baseMessageOptions: MessageDataType<MESSAGE_TYPE>)
-:(messageOptions?: MessageDataType<MESSAGE_TYPE> & BaseMessageOptions) => Promise<ShopwareMessageTypes[MESSAGE_TYPE]['responseType']>
+:(messageOptions?: MessageDataType<MESSAGE_TYPE> & BaseMessageOptions) => Promise<OinPanelMessageTypes[MESSAGE_TYPE]['responseType']>
 
 // SENDER WITH PARTIAL ARGUMENTS (ARGUMENTS DEFINED IN BASE OPTIONS ARE OMITTED)
-export function createSender<MESSAGE_TYPE extends keyof ShopwareMessageTypes, BASE_OPTIONS extends Partial<MessageDataType<MESSAGE_TYPE>>>
+export function createSender<MESSAGE_TYPE extends keyof OinPanelMessageTypes, BASE_OPTIONS extends Partial<MessageDataType<MESSAGE_TYPE>>>
 (messageType: MESSAGE_TYPE, baseMessageOptions: BASE_OPTIONS)
-:(messageOptions: Omit<MessageDataType<MESSAGE_TYPE>, keyof BASE_OPTIONS> & BaseMessageOptions) => Promise<ShopwareMessageTypes[MESSAGE_TYPE]['responseType']>
+:(messageOptions: Omit<MessageDataType<MESSAGE_TYPE>, keyof BASE_OPTIONS> & BaseMessageOptions) => Promise<OinPanelMessageTypes[MESSAGE_TYPE]['responseType']>
 
 // SENDER WITH FULL ARGUMENTS (WHEN NO BASE ARGUMENTS ARE DEFINED)
-export function createSender<MESSAGE_TYPE extends keyof ShopwareMessageTypes>
+export function createSender<MESSAGE_TYPE extends keyof OinPanelMessageTypes>
 (messageType: MESSAGE_TYPE)
-:(messageOptions: MessageDataType<MESSAGE_TYPE> & BaseMessageOptions) => Promise<ShopwareMessageTypes[MESSAGE_TYPE]['responseType']>
+:(messageOptions: MessageDataType<MESSAGE_TYPE> & BaseMessageOptions) => Promise<OinPanelMessageTypes[MESSAGE_TYPE]['responseType']>
 
 // MAIN FUNCTION WHICH INCLUDES ALL POSSIBILITES
-export function createSender<MESSAGE_TYPE extends keyof ShopwareMessageTypes>
+export function createSender<MESSAGE_TYPE extends keyof OinPanelMessageTypes>
 (messageType: MESSAGE_TYPE, baseMessageOptions?: MessageDataType<MESSAGE_TYPE>)
 {
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -469,11 +469,11 @@ export function createSender<MESSAGE_TYPE extends keyof ShopwareMessageTypes>
  * Factory method which creates a handler so that the type don't need to be
  * defined and can be hidden.
  */
-export function createHandler<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(messageType: MESSAGE_TYPE) {
+export function createHandler<MESSAGE_TYPE extends keyof OinPanelMessageTypes>(messageType: MESSAGE_TYPE) {
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   return (method: (data: MessageDataType<MESSAGE_TYPE> & BaseMessageOptions, additionalInformation: {
     _event_: MessageEvent<string>,
-  }) => Promise<ShopwareMessageTypes[MESSAGE_TYPE]['responseType']> | ShopwareMessageTypes[MESSAGE_TYPE]['responseType']) => {
+  }) => Promise<OinPanelMessageTypes[MESSAGE_TYPE]['responseType']> | OinPanelMessageTypes[MESSAGE_TYPE]['responseType']) => {
     return handle(messageType, method);
   };
 }
@@ -482,14 +482,14 @@ export function createHandler<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(m
  * Factory method which creates a handler so that the type doesn't need to be
  * defined and can be hidden.
  */
-export function createSubscriber<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(messageType: MESSAGE_TYPE) {
+export function createSubscriber<MESSAGE_TYPE extends keyof OinPanelMessageTypes>(messageType: MESSAGE_TYPE) {
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  return (method: (data: ShopwareMessageTypes[MESSAGE_TYPE]['responseType']) => void | Promise<unknown>, id?: string) => {
+  return (method: (data: OinPanelMessageTypes[MESSAGE_TYPE]['responseType']) => void | Promise<unknown>, id?: string) => {
     if (!id) {
       return subscribe(messageType, method);
     }
 
-    const wrapper = (data: ShopwareMessageTypes[MESSAGE_TYPE]['responseType']): void => {
+    const wrapper = (data: OinPanelMessageTypes[MESSAGE_TYPE]['responseType']): void => {
       if (data.id === id) {
         void method(data);
       }
@@ -626,7 +626,7 @@ window._swsdk = {
 /**
  * Check if the data is valid message data
  */
-function isMessageData<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(eventData: unknown): eventData is ShopwareMessageSendData<MESSAGE_TYPE> {
+function isMessageData<MESSAGE_TYPE extends keyof OinPanelMessageTypes>(eventData: unknown): eventData is ShopwareMessageSendData<MESSAGE_TYPE> {
   const shopwareMessageData = eventData as ShopwareMessageSendData<MESSAGE_TYPE>;
 
   return !!shopwareMessageData._type
@@ -634,8 +634,8 @@ function isMessageData<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(eventDat
          && !!shopwareMessageData._callbackId;
 }
 
-// ShopwareMessageTypes[MESSAGE_TYPE]['responseType']
-function isMessageResponseData<MESSAGE_TYPE extends keyof ShopwareMessageTypes>(eventData: unknown): eventData is ShopwareMessageResponseData<MESSAGE_TYPE> {
+// OinPanelMessageTypes[MESSAGE_TYPE]['responseType']
+function isMessageResponseData<MESSAGE_TYPE extends keyof OinPanelMessageTypes>(eventData: unknown): eventData is ShopwareMessageResponseData<MESSAGE_TYPE> {
   const shopwareMessageData = eventData as ShopwareMessageResponseData<MESSAGE_TYPE>;
 
   return !!shopwareMessageData._type

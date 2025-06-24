@@ -1,4 +1,4 @@
-import type { ShopwareMessageTypes } from '../../message-types';
+import type { OinPanelMessageTypes } from '../../message-types';
 import { findExtensionByBaseUrl } from '../utils';
 import type { privilegeString, extension } from '../privileges';
 import MissingPrivilegesError from '../privileges/missing-privileges-error';
@@ -9,7 +9,7 @@ import MissingPrivilegesError from '../privileges/missing-privileges-error';
 export function selectData(
   sourceData: Record<string|number, unknown>,
   selectors?: string[],
-  messageType: keyof ShopwareMessageTypes = 'datasetSubscribe',
+  messageType: keyof OinPanelMessageTypes = 'datasetSubscribe',
   origin = '',
 ): unknown {
   if (!selectors) {
@@ -55,7 +55,7 @@ function selectValue(
   extension: extension|undefined,
   permissionErrors: Array<privilegeString>,
   origin: string,
-  messageType: keyof ShopwareMessageTypes,
+  messageType: keyof OinPanelMessageTypes,
   result: Record<string|number, unknown> = {}
 ): Record<string|number, unknown> {
   const parts = selector.split('.');

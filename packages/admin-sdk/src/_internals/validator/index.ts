@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { privilegeString } from '../privileges';
 import type { privileges } from '../privileges';
-import type { ShopwareMessageTypes } from '../../message-types';
+import type { OinPanelMessageTypes } from '../../message-types';
 import { findExtensionByBaseUrl, traverseObject } from '../utils';
 import MissingPrivilegesError from '../privileges/missing-privileges-error';
 
@@ -15,7 +15,7 @@ export default function validate({
 }: {
   serializedData: any,
   origin: string,
-  type: keyof ShopwareMessageTypes,
+  type: keyof OinPanelMessageTypes,
   privilegesToCheck: (keyof privileges)[],
 }): Error|null {
   if (origin === undefined) {
