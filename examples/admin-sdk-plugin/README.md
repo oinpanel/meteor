@@ -1,6 +1,6 @@
 # Meteor Admin SDK Example Plugin
 
-This package contains an example plugin. It uses the [Meteor Admin SDK](https://github.com/shopware/meteor/tree/main/packages/admin-sdk) to extend the administration.
+This package contains an example plugin. It uses the [Meteor Admin SDK](https://github.com/oinpanel/meteor/tree/main/packages/admin-sdk) to extend the administration.
 
 ## Prerequisites
 We assume that you have a functioning Shopware 6 setup on your local machine.

@@ -8,7 +8,7 @@
 
 ```
 cd /www/
-git clone git@github.com:shopware/meteor.git
+git clone git@github.com:oinpanel/meteor.git
 cd meteor/packages/admin-sdk
 ```
 

@@ -26,7 +26,7 @@ ui.settings.addSettingsItem({
 
 ### Getting the right icon
 Assuming that your editor supports TypeScript, you should get auto-completion for valid `icon` values.
-In case that doesn't work take a look at the list [here](https://github.com/shopware/meteor-admin-sdk/blob/trunk/src/icons.ts).
+In case that doesn't work take a look at the list [here](https://github.com/oinpanel/meteor-admin-sdk/blob/trunk/src/icons.ts).
 
 #### Example
 ![Settings item example](./assets/add-settings-item-example.png)

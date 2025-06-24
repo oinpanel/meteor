@@ -34,5 +34,5 @@ button {
 
 ## Resources
 
-- [Rule source](https://github.com/shopware/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-border-token/index.ts)
-- [Test source](https://github.com/shopware/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-border-token/prefer-border-token.test.ts)
+- [Rule source](https://github.com/oinpanel/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-border-token/index.ts)
+- [Test source](https://github.com/oinpanel/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-border-token/prefer-border-token.test.ts)

@@ -28,5 +28,5 @@ a {
 
 ## Resources
 
-- [Rule source](https://github.com/shopware/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-color-token/index.ts)
-- [Test source](https://github.com/shopware/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-color-token/prefer-color-token.test.ts)
+- [Rule source](https://github.com/oinpanel/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-color-token/index.ts)
+- [Test source](https://github.com/oinpanel/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-color-token/prefer-color-token.test.ts)

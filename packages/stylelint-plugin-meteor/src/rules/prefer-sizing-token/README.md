@@ -34,5 +34,5 @@ a {
 
 ## Resources
 
-- [Rule source](https://github.com/shopware/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-sizing-token/index.ts)
-- [Test source](https://github.com/shopware/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-sizing-token/prefer-sizing-token.test.ts)
+- [Rule source](https://github.com/oinpanel/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-sizing-token/index.ts)
+- [Test source](https://github.com/oinpanel/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-sizing-token/prefer-sizing-token.test.ts)

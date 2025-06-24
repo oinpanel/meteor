@@ -6,7 +6,7 @@ There are three stages: Future, Stable and Deprecated
 
 ## Future
 
-In this stage, we test new ideas and gather feedback, so please [create an issue](https://github.com/shopware/meteor/issues/new/choose) to share yours.
+In this stage, we test new ideas and gather feedback, so please [create an issue](https://github.com/oinpanel/meteor/issues/new/choose) to share yours.
 
 If a component isn't helpful, we skip moving it to Stable and remove it in the next release.
 

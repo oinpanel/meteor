@@ -20,7 +20,7 @@ our [code of conduct](./CONTRIBUTING.md).
 
 ## Bugs
 
-Please take a look at the [existing issues](https://github.com/shopware/meteor/issues)
+Please take a look at the [existing issues](https://github.com/oinpanel/meteor/issues)
 before creating a new one. That way keep the number of duplicate issues low.
 Complete the issue template as much as possible when creating a new issue.
 
@@ -30,12 +30,12 @@ for us to reproduce in the issue's description.
 
 ## Feature Requests
 
-Search trough the [list of existing feature requests](https://github.com/shopware/meteor/issues),
+Search trough the [list of existing feature requests](https://github.com/oinpanel/meteor/issues),
 before you create a issue. If somebody already requested your feature you
 can up-vote that issue. This helps us to see what the community wants the most.
 
 If there does not already exist a feature request for your idea,
-you can [request a feature](https://github.com/shopware/meteor/issues/new).
+you can [request a feature](https://github.com/oinpanel/meteor/issues/new).
 
 ## Local development
 
@@ -102,8 +102,8 @@ That's it there is nothing more you have to do.
 ### Updating the visual tests
 
 1. Copy the name of your branch
-2. Go to the [actions tab](https://github.com/shopware/meteor/actions)
-3. Click on [Visual Tests](https://github.com/shopware/meteor/actions) in the left sidebar
+2. Go to the [actions tab](https://github.com/oinpanel/meteor/actions)
+3. Click on [Visual Tests](https://github.com/oinpanel/meteor/actions) in the left sidebar
 4. You then see a blue bar with a button that says `Run workflow`, click on that
 5. Select your branch from the dropdown menu
 6. Click on the `Run workflow` button

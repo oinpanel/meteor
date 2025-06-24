@@ -16,7 +16,7 @@ const messages = ruleMessages(ruleName, {
 });
 
 const meta = {
-  url: "https://github.com/shopware/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-border-token/README.md",
+  url: "https://github.com/oinpanel/meteor/blob/main/packages/stylelint-plugin-meteor/src/rules/prefer-border-token/README.md",
   fixable: true,
 };
 

@@ -23,11 +23,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-        if: ${{ github.event.pull_request.head.repo.full_name == 'shopware/meteor' }}
+        if: ${{ github.event.pull_request.head.repo.full_name == 'oinpanel/meteor' }}
 
       - name: Checkout
         uses: actions/checkout@v4
-        if: ${{ github.event.pull_request.head.repo.full_name != 'shopware/meteor' }}
+        if: ${{ github.event.pull_request.head.repo.full_name != 'oinpanel/meteor' }}
 
       - uses: pnpm/action-setup@v3
         with:
