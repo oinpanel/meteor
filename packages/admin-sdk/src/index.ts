@@ -16,7 +16,6 @@ import * as actionButton from './ui/action-button';
 import * as mediaModal from './ui/media-modal';
 import * as webhook from './app/action';
 import * as data from './data';
-import * as iap from './iap';
 import type EntityCollectionType from './_internals/data/EntityCollection';
 import type { Entity as EntityType } from './_internals/data/Entity';
 import composables from './data/composables';
@@ -52,7 +51,6 @@ export {
   app,
   data,
   composables,
-  iap,
 };
 
 /**
