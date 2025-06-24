@@ -1,0 +1,50 @@
+{
+  "name": "@oinpanel/meteor-tokens",
+  "version": "1.1.0",
+  "description": "Design Tokens for the Meteor Design System used at OinPanel",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:oinpanel/meteor.git"
+  },
+  "license": "MIT",
+  "author": "shopware AG",
+  "type": "module",
+  "exports": {
+    "./primitives.css": "./deliverables/foundation/primitives.css",
+    "./administration/light.css": "./deliverables/administration/light.css",
+    "./administration/dark.css": "./deliverables/administration/dark.css",
+    "./foundation/primitives.json": "./dictionaries/foundation/primitives.tokens.json"
+  },
+  "main": "index.js",
+  "files": [
+    "deliverables",
+    "dictionaries"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:all": "npm run lint:eslint && npm run lint:types",
+    "lint:eslint": "eslint .",
+    "lint:types": "tsc --noEmit",
+    "start": "tsx ./src/scripts/index.ts",
+    "test:unit": "vitest --run",
+    "test:unit:watch": "vitest",
+    "build": "echo 'This is only used for turbo repo caching'"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ora": "^8.2.0",
+    "vitest": "^3.0.6",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@types/node": "^22.13.4",
+    "eslint": "^9.20.1",
+    "eslint-plugin-vitest": "^0.5.4",
+    "msw": "^2.7.1",
+    "prettier": "^3.5.1",
+    "tsx": "^4.19.3",
+    "typescript-eslint": "^8.24.1"
+  }
+}
