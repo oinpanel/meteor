@@ -13,12 +13,12 @@ describe("mt-avatar", () => {
   });
 
   it("shows only initials", () => {
-    render(MtAvatar, { props: { firstName: "John", lastName: "Doe" } });
+    render(MtAvatar, { props: { username: "John" } });
 
     const result = screen.getByTestId("mt-avatar-initials");
 
     expect(result).toBeInTheDocument();
-    expect(result).toHaveTextContent("JD");
+    expect(result).toHaveTextContent("J");
 
     expect(screen.queryByTestId("mt-avatar-placeholder")).not.toBeInTheDocument();
   });
