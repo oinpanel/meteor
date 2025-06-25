@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.14.0
+
+### Minor Changes
+
+- 97eccc6: Add mt-entity-select component
+
+### Patch Changes
+
+- 97eccc6: fix: validator errors mt-field-error
+- Updated dependencies [97eccc6]
+- Updated dependencies [97eccc6]
+  - @oinpanel/meteor-admin-sdk@6.2.0
+
 ## 4.13.0
 
 ### Minor Changes

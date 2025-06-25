@@ -1,5 +1,13 @@
 # nuxt-app
 
+## 0.0.41
+
+### Patch Changes
+
+- Updated dependencies [97eccc6]
+- Updated dependencies [97eccc6]
+  - @oinpanel/meteor-component-library@4.14.0
+
 ## 0.0.40
 
 ### Patch Changes

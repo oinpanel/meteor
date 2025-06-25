@@ -1,5 +1,16 @@
 # administration
 
+## 1.0.26
+
+### Patch Changes
+
+- Updated dependencies [97eccc6]
+- Updated dependencies [97eccc6]
+- Updated dependencies [97eccc6]
+- Updated dependencies [97eccc6]
+  - @oinpanel/meteor-admin-sdk@6.2.0
+  - @oinpanel/meteor-component-library@4.14.0
+
 ## 1.0.25
 
 ### Patch Changes
