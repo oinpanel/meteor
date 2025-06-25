@@ -1,5 +1,5 @@
 ---
-"@shopware-ag/meteor-admin-sdk": minor
+"@oinpanel/meteor-admin-sdk": minor
 ---
 
 Added context.can
